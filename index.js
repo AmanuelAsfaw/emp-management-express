@@ -5,6 +5,8 @@ const cors = require('cors')
 const db = require('./db')
 const employeeRouter = require('./routes/employees')
 
+const EmployeeCtrl = require('./controllers/employee')
+
 const app = express()
 const apiPort = 3000
 
@@ -19,5 +21,12 @@ db.once('open', function(){
 })
 
 app.use('/employees', employeeRouter)
+
+app.use('/', (req, res) => {
+    return res.status(200).json({
+        'success' : true,
+        data : 'This is home page for employee app'
+    })
+})
 
 app.listen(apiPort, () => console.log(`Server running on port ${apiPort}`))

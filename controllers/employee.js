@@ -118,10 +118,15 @@ getEmployees = async (req, res) => {
     }).catch(err => console.log(err))
 }
 
+homeView = async (req, res) => {
+    return res.status(200).json({ success: true, data: 'This is home page for employee app'})
+}
+
 module.exports = {
     createEmployee,
     updateEmployee,
     deleteEmployee,
     getEmployees,
     getEmployeeById,
+    homeView,
 }
