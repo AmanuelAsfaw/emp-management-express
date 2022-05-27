@@ -1,7 +1,7 @@
 FROM node:lts-alpine
 # RUN apt-get update && apt-get install && apt-get clean
 
-WORKDIR /
+WORKDIR ''
 
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --production --silent
