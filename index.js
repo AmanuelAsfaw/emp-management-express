@@ -8,7 +8,8 @@ const employeeRouter = require('./routes/employees')
 const EmployeeCtrl = require('./controllers/employee')
 
 const app = express()
-const apiPort = 3000
+
+const apiPort = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
